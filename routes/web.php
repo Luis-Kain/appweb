@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\DashboardCustomerController;
 use App\Http\Controllers\LoginCustomerController;
+use App\Http\Controllers\RegisterCustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardCustomerController::class, 'index']);
 
 Route::get('/login', [LoginCustomerController::class, 'index']);
+
+Route::get('/register', [RegisterCustomerController::class, 'index']);

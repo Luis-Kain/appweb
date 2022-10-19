@@ -17,6 +17,7 @@ return [
         resource_path('views'),
         resource_path('views/dashboardCustomer'),
         resource_path('views/loginCustomer'),
+        resource_path('views/registerCustomer'),
 
     ],
 
