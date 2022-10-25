@@ -21,6 +21,8 @@ return [
         resource_path('views/ordersCustomer'),
         resource_path('views/routesCustomer'),
         resource_path('views/salesCustomer'),
+        resource_path('views/rolesAdmin'),
+
     ],
 
     /*

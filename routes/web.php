@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterCustomerController;
 use App\Http\Controllers\OrdersCustomerController;
 use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\RoutesCustomerController;
+use App\Http\Controllers\RolesAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,5 @@ Route::get('/orders',[OrdersCustomerController::class, 'index']);
 Route::get('/sales', [SalesCustomerController::class,'index']);
 
 Route::get('/routes', [RoutesCustomerController::class, 'index'])->name('routes');
+
+Route::get('/admin', [RolesAdminController::class, 'index']);

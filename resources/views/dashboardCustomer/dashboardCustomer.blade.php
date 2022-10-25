@@ -12,8 +12,9 @@
       <header class="header">
         <h1 class="header__heading"><a>HAWK</a></h1>
         <div class="header__options">
-          <a href="http://localhost:8000/" class="header__link">Log in</a>
-          <a href="http://localhost:8000/register" class="header__link">Register</a>
+          <a href="http://localhost:8000/" class="header__link">Sign out</a>
+          <a href="http://localhost:8000/admin" class="header__link">Admin</a>
+
         </div>
       </header>
 

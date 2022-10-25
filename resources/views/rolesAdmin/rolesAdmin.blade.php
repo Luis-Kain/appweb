@@ -24,7 +24,7 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">Orders</h2>
+              <h2 class="main__heading">Admin</h2>
               
               <p class="main__sub"> </p>
             </div>
@@ -38,25 +38,30 @@
           <div >
                 <table id ="customers">
                     <tr>
-                        <th>Order</th>
-                        <th>id</th>
-                        <th>Status</th>
+                        <th>Employee_id</th>
+                        <th>Name</th>
+                        <th>Role</th>
                     </tr>
                     <tr>
-                        <th>Order 1</th>
-                        <th> 0 </th>
-                        <th><a href="/routes" class="ss-show"> in route</a></th>
+                        <th>0</th>
+                        <th>Name 1</th>
+                        <th>Sales</th>
                     </tr>
                     <tr>
-                        <th>Order 2</th>
-                        <th> 1 </th>
-                        <th> <a href="/routes" class="ss-show"> in route</a> </th>
+                        <th>1</th>
+                        <th>Name 2</th>
+                        <th>Purchasing</th>
                     </tr>
                     <tr>
-                        <th>Order 3</th>
-                        <th> 2 </th>
-                        <th> <a href="/routes" class="ss-show"> in route</a> </th>
-                    <tr>    
+                        <th>2</th>
+                        <th>Name 3</th>
+                        <th>Warehouse</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>Name 4</th>
+                        <th>Route</th>
+                    </tr>
                 </table> 
             </div>
         </main>
