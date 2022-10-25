@@ -61,12 +61,14 @@
                         <th>av.35 col.50. street 20</th>
                         <th><img src="https://brazilian.report/wp-content/uploads/2019/11/brazilian-roads.jpg"  width="200rem" height="200rem"></th>
                     </tr>
+                    <tr>
                         <th>Route</th>
                         <th> 2 </th>
                         <th>7</th>
                         <th> <a> in route</a> </th>
                         <th>av.21 col.2. street 50</th>
                         <th><img src="https://www.motorcycletalks.com/wp-content/uploads/2020/02/07b04e_b7cf1c2edcea4a29a4dcef97c9d561bd_mv2_d_3968_2976_s_4_2.jpg"  width="200rem" height="200rem"></th>
+                    </tr>
                 </table> 
             </div>
         </main>
