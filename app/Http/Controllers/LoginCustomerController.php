@@ -13,8 +13,7 @@ class LoginCustomerController extends Controller
      */
     public function index()
     {
-        return view('loginCustomer');
-        //
+        return view("loginCustomer");
     }
 
     /**

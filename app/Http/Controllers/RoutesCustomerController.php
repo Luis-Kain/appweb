@@ -13,7 +13,7 @@ class RoutesCustomerController extends Controller
      */
     public function index()
     {
-        //
+        return view("routesCustomer");
     }
 
     /**

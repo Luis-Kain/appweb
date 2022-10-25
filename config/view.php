@@ -18,7 +18,9 @@ return [
         resource_path('views/dashboardCustomer'),
         resource_path('views/loginCustomer'),
         resource_path('views/registerCustomer'),
-
+        resource_path('views/ordersCustomer'),
+        resource_path('views/routesCustomer'),
+        resource_path('views/salesCustomer'),
     ],
 
     /*

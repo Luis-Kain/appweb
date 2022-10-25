@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardCustomerController;
 use App\Http\Controllers\LoginCustomerController;
 use App\Http\Controllers\RegisterCustomerController;
-
+use App\Http\Controllers\OrdersCustomerController;
+use App\Http\Controllers\SalesCustomerController;
+use App\Http\Controllers\RoutesCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +19,14 @@ use App\Http\Controllers\RegisterCustomerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LoginCustomerController::class, 'index']);
 
 Route::get('/dashboard', [DashboardCustomerController::class, 'index']);
 
-Route::get('/login', [LoginCustomerController::class, 'index']);
-
 Route::get('/register', [RegisterCustomerController::class, 'index']);
+
+Route::get('/orders',[OrdersCustomerController::class, 'index']);
+
+Route::get('/sales', [SalesCustomerController::class,'index']);
+
+Route::get('/routes', [RoutesCustomerController::class, 'index'])->name('routes');

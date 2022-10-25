@@ -13,7 +13,7 @@ class DashboardCustomerController extends Controller
      */
     public function index()
     {
-        return view('dashboardCustomer');
+        return view("dashboardCustomer");
     }
 
     /**
