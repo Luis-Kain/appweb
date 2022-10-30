@@ -33,3 +33,5 @@ Route::get('/sales', [SalesCustomerController::class,'index']);
 Route::get('/routes', [RoutesCustomerController::class, 'index'])->name('routes');
 
 Route::get('/admin', [RolesAdminController::class, 'index']);
+
+Route::post('/client', [ClientController::class, 'create']);
