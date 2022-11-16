@@ -30,30 +30,35 @@
 
             <div class="main__list-heading-wrap">
               
-                <form action="./dashboard" method="get">
-                   
+                <form action="/register/succes" method="post">
+                <?php echo csrf_field(); ?>   
                 <p>
-                    <label for="user_name">First Name:</label>
+                    <label for="name">First Name:</label>
                     <input type="text" 
-                        name="First name"
-                        id="First name"
+                        name="name"
                         placeholder="name">
                     </input>
                 </p>
                 <p>
                     
-                    <label for="user_name">Last Name:</label>
+                    <label for="first_lastname">First last Name:</label>
                     <input type="text" 
-                        name="Last name"
-                        id="Last name"
-                        placeholder="Last name">
+                        name="first_lastname"
+                        placeholder="first last name">
                     </input>
                 </p>
                 <p>
-                    <label for="user_name">UserName:</label>
+                    
+                    <label for="second_lastname">Second last Name:</label>
+                    <input type="text" 
+                        name="second_lastname"
+                        placeholder="first last name">
+                    </input>
+                </p>
+                <p>
+                    <label for="username">UserName:</label>
                     <input type="text" 
                         name="username"
-                        id="username"
                         placeholder="username">
                     </input>  
                 </p>
@@ -61,22 +66,19 @@
                     <label for="password">Password:</label>
                     <input type="password" 
                             name="password" 
-                            id="password"
                         placeholder="password">
                     </input>
 
                 </p>
                 <p>
-                    <label for="password">Confirm Password:</label>
-                    <input type="password" 
-                            name="password" 
-                            id="password"
-                        placeholder="password">
+                    <label for="roll_id">roll id:</label>
+                    <input type="text" 
+                            name="roll_id" 
+                        placeholder="roll id">
                     </input>
 
                 </p>
-
-                    <a href="http://localhost:8000/dashboard" class="ss-show">Submit</a>
+                    <button type="Submit" class="ss-show">Submit</button>
                 </form>
             </div>
 

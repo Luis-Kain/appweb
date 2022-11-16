@@ -22,6 +22,8 @@ return [
         resource_path('views/routesCustomer'),
         resource_path('views/salesCustomer'),
         resource_path('views/rolesAdmin'),
+        resource_path('views/addClientCustomer'),
+        resource_path('views/editClientCustomer'),
 
     ],
 

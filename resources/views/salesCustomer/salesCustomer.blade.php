@@ -32,61 +32,37 @@
 
             <div class="main__list-heading-wrap">
               
-                <form action="./dashboard" method="get">
+                <form action="/orders/succes" method="post">
+                    @csrf
                     <p>  
-                    <label for="client_name">Client Name:</label>
+                    <label for="client_id">client id:</label>
                     <input type="text" 
-                        name="Name or company"
-                        id="username"
-                        placeholder="Name or company">
+                        name="customer_id"
+                        placeholder="customer_id">
                     </p>
                   
                     <p>
-                    <label for="customer_number">customer number:</label>
+                    <label for="status_id">status id:</label>
                     <input type="text" 
-                        name="customer_number" 
-                        id="id"
-                        placeholder="customer id">
+                        name="status_id" 
+                        placeholder="status id">
                     </p>
                     
-                    <p><label for="invoice">physical invoice:</label>
+                    <p><label for="total">total</label>
                     <input type="text" 
-                        name="invoice" 
-                        id="id"
-                        placeholder="invoice number">
+                        name="total" 
+                        placeholder="total">
 
-                    <p>
-                    <label for="start">Deliver date:</label>
-                    <input type="date" id="Deliver Date" name="deliver"
-                        min="2022-01-01" max="2024-12-31">
-                    </p>
-                    <p>
-                        <label for="Material">Material:</label>
-                            <p>
-                                <label for="Material">Material 1</label>
-                                <input type="radio" value="material 1">
-                            </p>
-                                <label for="Material">Material 2</label>
-                                <input type="radio" value="material 2">
-                            <p>
-                                <label for="Material">Material 3</label>
-                                <input type="radio" value="material 3">
-                            </p>
-                            <p>
-                                <label for="Material">Material 4</label>
-                                <input type="radio" value="material 4">
-                            </p>
-
-                    </p>
                     
-                    <p><label for="invoice">Delivery adress:</label>
+                    <p><label for="delivery_adress">Delivery adress:</label>
                     <input type="text" 
-                        name="invoice" 
+                        name="delivery_adress" 
                         id="id"
                         placeholder="Delivery Adess">
 
                     <p>
-                    <a href="http://localhost:8000/dashboard" class="ss-show">Submit</a></p>
+                     <button type="submit" class="ss-show">Submit</button>
+                    </p>
                     
                     
                 </form>

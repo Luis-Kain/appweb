@@ -14,6 +14,8 @@
         <div class="header__options">
           <a href="http://localhost:8000/" class="header__link">Sign out</a>
           <a href="http://localhost:8000/dashboard" class="header__link">Home</a>
+          <a href="http://localhost:8000/admin/add" class="header__link">Add new client</a>
+
         </div>
       </header>
 
@@ -24,7 +26,7 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">Admin</h2>
+              <h2 class="main__heading">clients</h2>
               
               <p class="main__sub"> </p>
             </div>
@@ -38,30 +40,22 @@
           <div >
                 <table id ="customers">
                     <tr>
-                        <th>Employee_id</th>
+                        <th>id</th>
                         <th>Name</th>
-                        <th>Role</th>
+                        <th>RFC</th>
+                        <th>description</th>
+                        <th>Actions</th>
                     </tr>
-                    <tr>
-                        <th>0</th>
-                        <th>Name 1</th>
-                        <th>Sales</th>
-                    </tr>
-                    <tr>
-                        <th>1</th>
-                        <th>Name 2</th>
-                        <th>Purchasing</th>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <th>Name 3</th>
-                        <th>Warehouse</th>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <th>Name 4</th>
-                        <th>Route</th>
-                    </tr>
+                    @foreach($client as $data)
+                      <tr>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->nombre}}</td>
+                        <td>{{$data->RFC}}</td>
+                        <td>{{$data->description}}</td>
+                        <td><a href="/admin/edit/{{ $data->id }}" class="header__link">Edit</a>
+                        <a href="/admin/delete/{{ $data->id }}" class="header__link">Delete</a></td>
+                      </tr>
+                    @endforeach
                 </table> 
             </div>
         </main>

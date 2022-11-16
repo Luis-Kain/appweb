@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Client;
+use App\Http\Controllers\Controller;
 
 class RolesAdminController extends Controller
 {
@@ -21,9 +26,9 @@ class RolesAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -43,9 +48,12 @@ class RolesAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $client = Client::all();
+        
+        return view('rolesAdmin',['client'=>$client ]);
+        //return view('rolesAdmin', compact('client'));
     }
 
     /**
@@ -68,7 +76,20 @@ class RolesAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nombre = $request->input('nombre');
+        $RFC = $request->input('RFC');
+        $description = $request->input('description');
+        
+        DB::update('update clients set 
+        nombre= ?,
+        RFC= ?,
+        description= ? 
+        where id = ?',[$nombre,$RFC,$description,$id]);
+
+        $client = Client::all();
+        
+        return view('rolesAdmin',['client'=>$client ]);
+
     }
 
     /**
@@ -79,6 +100,17 @@ class RolesAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from clients where id = ?',[$id]);
+        
+        $client = Client::all();
+        
+        return view('rolesAdmin',['client'=>$client ]);
+    }
+
+    public function redirect($id){
+
+        $users = DB::select('select * from clients where id = ?', [$id]);
+
+        return view("editClientCustomer",['users'=>$users]);
     }
 }

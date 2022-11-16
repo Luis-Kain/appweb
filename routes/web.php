@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LaravelCrud;
 use App\Http\Controllers\DashboardCustomerController;
 use App\Http\Controllers\LoginCustomerController;
 use App\Http\Controllers\RegisterCustomerController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\OrdersCustomerController;
 use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\RoutesCustomerController;
 use App\Http\Controllers\RolesAdminController;
+use App\Http\Controllers\AddClientCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,18 @@ Route::get('/sales', [SalesCustomerController::class,'index']);
 
 Route::get('/routes', [RoutesCustomerController::class, 'index'])->name('routes');
 
-Route::get('/admin', [RolesAdminController::class, 'index']);
+Route::get('/admin', [RolesAdminController::class, 'show']);
 
-Route::post('/client', [ClientController::class, 'create']);
+Route::post('/register/succes',[RegisterCustomerController::class, 'create']);
+
+Route::post('/orders/succes',[OrdersCustomerController::class, 'create']);
+
+Route::get('/admin/add',[AddClientCustomerController::class,'index']);
+
+Route::post('/admin/add/succes',[AddClientCustomerController::class,'store']);
+
+Route::get('/admin/edit/{id}',[RolesAdminController::class,'redirect']);
+
+Route::post('/admin/update/{id}',[RolesAdminController::class,'update']);
+
+Route::get('/admin/delete/{id}',[RolesAdminController::class,'destroy']);

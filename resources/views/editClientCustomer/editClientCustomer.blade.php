@@ -23,60 +23,41 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">Register</h2>
+              <h2 class="main__heading">Edit Client</h2>
               
               <p class="main__sub"> </p>
             </div>
 
             <div class="main__list-heading-wrap">
               
-                <form action="/register/succes" method="post">
+                <form action="/admin/update/<?php echo $users[0]->id;?>" method="post">
                 @csrf   
                 <p>
-                    <label for="name">First Name:</label>
+                    <label for="nomber">nombre:</label>
                     <input type="text" 
-                        name="name"
-                        placeholder="name">
+                        name="nombre"
+                        placeholder="nombre"
+                        value = "<?php echo$users[0]->nombre; ?>">
+                    </input>
+                   
+                </p>
+                <p>
+                    
+                    <label for="RFC">RFC:</label>
+                    <input type="text" 
+                        name="RFC"
+                        placeholder="RFC"
+                        value = "<?php echo$users[0]->RFC; ?>">
                     </input>
                 </p>
                 <p>
                     
-                    <label for="first_lastname">First last Name:</label>
+                    <label for="description">description</label>
                     <input type="text" 
-                        name="first_lastname"
-                        placeholder="first last name">
+                        name="description"
+                        placeholder="description"
+                        value = "<?php echo$users[0]->description; ?>">
                     </input>
-                </p>
-                <p>
-                    
-                    <label for="second_lastname">Second last Name:</label>
-                    <input type="text" 
-                        name="second_lastname"
-                        placeholder="first last name">
-                    </input>
-                </p>
-                <p>
-                    <label for="username">UserName:</label>
-                    <input type="text" 
-                        name="username"
-                        placeholder="username">
-                    </input>  
-                </p>
-                <p>
-                    <label for="password">Password:</label>
-                    <input type="password" 
-                            name="password" 
-                        placeholder="password">
-                    </input>
-
-                </p>
-                <p>
-                    <label for="roll_id">roll id:</label>
-                    <input type="text" 
-                            name="roll_id" 
-                        placeholder="roll id">
-                    </input>
-
                 </p>
                     <button type="Submit" class="ss-show">Submit</button>
                 </form>

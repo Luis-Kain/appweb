@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last_name');
-            $table->timeStamps();
+            $table->string('nombre');
+            $table->string('RFC');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 

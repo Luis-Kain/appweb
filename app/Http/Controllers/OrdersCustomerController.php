@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
+
 class OrdersCustomerController extends Controller
 {
     /**
@@ -21,9 +24,15 @@ class OrdersCustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
+        $query = DB::table('invoices')->insert([
+            'customer_id'=>$request->input('customer_id'),
+            'status_id'=>$request->input('status_id'),
+            'total'=>$request->input('total'),
+            'delivery_adress'=>$request->input('delivery_adress'),
+        ]);
     }
 
     /**
