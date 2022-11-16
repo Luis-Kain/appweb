@@ -36,7 +36,7 @@
                     <label for="nomber">nombre:</label>
                     <input type="text" 
                         name="nombre"
-                        placeholder="nombre"
+                        placeholder="nombrecd"
                         value = "<?php echo$users[0]->nombre; ?>">
                     </input>
                    
