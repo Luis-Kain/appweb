@@ -33,10 +33,10 @@
                 <form action="/admin/update/<?php echo $users[0]->id;?>" method="post">
                 @csrf   
                 <p>
-                    <label for="nomber">nombre:</label>
+                    <label for="nombre">nombre:</label>
                     <input type="text" 
                         name="nombre"
-                        placeholder="nombrecd"
+                        placeholder="nombre"
                         value = "<?php echo$users[0]->nombre; ?>">
                     </input>
                    

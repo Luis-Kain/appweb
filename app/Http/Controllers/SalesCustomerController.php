@@ -34,7 +34,18 @@ class SalesCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $query = DB::table('invoices')->insert([
+            'customer_id'=>$request->input('customer_id'),
+            'status_id'=>$request->input('status_id'),
+            'total'=>$request->input('total'),
+            'delivery_adress'=>$request->input('delivery_adress'),
+            
+            
+        ]);
+
+        $invoice = Invoice::all();
+
+        return view("ordersCustomer",['invoice'=>$invoice]); 
     }
 
     /**

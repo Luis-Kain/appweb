@@ -23,17 +23,8 @@ class RegisterCustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        
-        $query = DB::table('users')->insert([
-            'name'=>$request->input('name'),
-            'first_lastname'=>$request->input('first_lastname'),
-            'second_lastname'=>$request->input('second_lastname'),
-            'username'=>$request->input('username'),
-            'password'=>$request->input('password'),
-            'roll_id'=>$request->input('roll_id'),
-        ]);
 
     }
 
@@ -45,7 +36,14 @@ class RegisterCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $query = DB::table('users')->insert([
+            'name'=>$request->input('name'),
+            'first_lastname'=>$request->input('first_lastname'),
+            'second_lastname'=>$request->input('second_lastname'),
+            'username'=>$request->input('username'),
+            'password'=>$request->input('password'),
+            'roll_id'=>$request->input('roll_id'),
+        ]);
     }
 
     /**

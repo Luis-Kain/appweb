@@ -6,10 +6,11 @@ use Auth;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\Client;
+use App\Models\Invoice;
 use App\Http\Controllers\Controller;
 
-class RolesAdminController extends Controller
+
+class InvoiceCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +19,9 @@ class RolesAdminController extends Controller
      */
     public function index()
     {
-        $client = Client::all();
-        
-        return view('rolesAdmin',['client'=>$client ]);
+        $invoice = Invoice::all();
+
+        return view("ordersCustomer",['invoice'=>$invoice]);
     }
 
     /**
@@ -28,7 +29,7 @@ class RolesAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         
     }
@@ -41,7 +42,16 @@ class RolesAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $query = DB::table('invoices')->insert([
+            'customer_id'=>$request->input('customer_id'),
+            'status_id'=>$request->input('status_id'),
+            'total'=>$request->input('total'),
+            'delivery_adress'=>$request->input('delivery_adress'),
+        ]);
+
+        $invoice = Invoice::all();
+        
+        return view('ordersCustomer',['invoice'=>$invoice ]);
     }
 
     /**
@@ -50,10 +60,9 @@ class RolesAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-       
-        //return view('rolesAdmin', compact('client'));
+        //
     }
 
     /**
@@ -76,20 +85,21 @@ class RolesAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $nombre = $request->input('nombre');
-        $RFC = $request->input('RFC');
-        $description = $request->input('description');
+        $customer_id = $request->input('customer_id');
+        $status_id = $request->input('status_id');
+        $total = $request->input('total');
+        $delivery_adress = $request->input('delivery_adress');
         
-        DB::update('update clients set 
-        nombre= ?,
-        RFC= ?,
-        description= ? 
-        where id = ?',[$nombre,$RFC,$description,$id]);
+        DB::update('update invoices set 
+        customer_id= ?,
+        status_id= ?,
+        total= ?,
+        delivery_adress= ?
+        where id = ?',[$customer_id,$status_id,$total,$delivery_adress,$id]);
 
-        $client = Client::all();
+        $invoice = Invoice::all();
         
-        return view('rolesAdmin',['client'=>$client ]);
-
+        return view('ordersCustomer',['invoice'=>$invoice]);
     }
 
     /**
@@ -100,17 +110,16 @@ class RolesAdminController extends Controller
      */
     public function destroy($id)
     {
-        DB::delete('delete from clients where id = ?',[$id]);
+        DB::delete('delete from invoices where id = ?',[$id]);
         
-        $client = Client::all();
+        $invoice = Invoice::all();
         
-        return view('rolesAdmin',['client'=>$client ]);
+        return view('ordersCustomer',['invoice'=>$invoice ]);
     }
 
     public function redirect($id){
+        $invoices = DB::select('select * from invoices where id = ?', [$id]);
 
-        $users = DB::select('select * from clients where id = ?', [$id]);
-
-        return view("editClientCustomer",['users'=>$users]);
+        return view("editOrderCustomer",['invoices'=>$invoices]);
     }
 }

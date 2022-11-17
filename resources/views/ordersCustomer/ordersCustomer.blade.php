@@ -14,6 +14,7 @@
         <div class="header__options">
           <a href="http://localhost:8000/" class="header__link">Sign out</a>
           <a href="http://localhost:8000/dashboard" class="header__link">Home</a>
+          <a href="http://localhost:8000/sales/add" class="header__link">Add new order</a>
         </div>
       </header>
 
@@ -38,25 +39,26 @@
           <div >
                 <table id ="customers">
                     <tr>
-                        <th>Order</th>
                         <th>id</th>
-                        <th>Status</th>
+                        <th>Customer id</th>
+                        <th>Status id</th>
+                        <th>Total</th>
+                        <th>Delivery adress</th>
+                        <th>Actions</th>
+                        <th>Route</th>
                     </tr>
+                    @foreach($invoice as $data)
                     <tr>
-                        <th>Order 1</th>
-                        <th> 0 </th>
-                        <th><a href="/routes" class="ss-show"> in route</a></th>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->customer_id}}</td>
+                        <td>{{$data->status_id}}</td>
+                        <td>{{$data->total}}</td>
+                        <td>{{$data->delivery_adress}}</td>
+                        <td><a href="/invoice/edit/{{ $data->id }}" class="header__link">Edit</a>
+                        <a href="/invoice/delete/{{ $data->id }}" class="header__link">Delete</a></td>
+                        <td><a href="/routes" class="header__link">Route</a></td>
                     </tr>
-                    <tr>
-                        <th>Order 2</th>
-                        <th> 1 </th>
-                        <th> <a href="/routes" class="ss-show"> in route</a> </th>
-                    </tr>
-                    <tr>
-                        <th>Order 3</th>
-                        <th> 2 </th>
-                        <th> <a href="/routes" class="ss-show"> in route</a> </th>
-                    <tr>    
+                    @endforeach  
                 </table> 
             </div>
         </main>
