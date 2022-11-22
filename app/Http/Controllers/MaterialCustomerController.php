@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
+use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Models\Material;
+use App\Http\Controllers\Controller;
 
-class RegisterCustomerController extends Controller
+class MaterialCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,9 @@ class RegisterCustomerController extends Controller
      */
     public function index()
     {
-        return view("registerCustomer");
+        $material = Material::all();
+        
+        return view('materialCustomer',['material'=>$material ]);
     }
 
     /**
@@ -25,7 +30,7 @@ class RegisterCustomerController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -36,16 +41,7 @@ class RegisterCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $query = DB::table('users')->insert([
-            'name'=>$request->input('name'),
-            'first_lastname'=>$request->input('first_lastname'),
-            'second_lastname'=>$request->input('second_lastname'),
-            'username'=>$request->input('username'),
-            'password'=>$request->input('password'),
-            'roll_id'=>$request->input('roll_id'),
-        ]);
-
-        return view("loginCustomer");
+        //
     }
 
     /**
@@ -79,7 +75,21 @@ class RegisterCustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name = $request->input('name');
+        $cost = $request->input('cost');
+        $price = $request->input('price');
+        $amount = $request->input('amount');
+
+        DB::update('update materials set 
+        name= ?,
+        cost= ?,
+        price= ?,
+        amount= ? 
+        where id = ?',[$name,$cost,$price,$amount,$id]);
+
+        $material = Material::all();
+        
+        return view('materialCustomer',['material'=>$material]);
     }
 
     /**
@@ -90,6 +100,17 @@ class RegisterCustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from materials where id = ?',[$id]);
+        
+        $material = Material::all();
+        
+        return view('materialCustomer',['material'=>$material]);
+    }
+
+    public function redirect($id){
+
+        $material = DB::select('select * from materials where id = ?', [$id]);
+
+        return view("editMaterialCustomer",['material'=>$material]);
     }
 }

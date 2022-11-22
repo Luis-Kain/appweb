@@ -49,14 +49,14 @@
                     </tr>
                     @foreach($invoice as $data)
                     <tr>
-                        <td>{{$data->id}}</td>
-                        <td>{{$data->customer_id}}</td>
-                        <td>{{$data->status_id}}</td>
-                        <td>{{$data->total}}</td>
-                        <td>{{$data->delivery_adress}}</td>
-                        <td><a href="/invoice/edit/{{ $data->id }}" class="header__link">Edit</a>
-                        <a href="/invoice/delete/{{ $data->id }}" class="header__link">Delete</a></td>
-                        <td><a href="/routes" class="header__link">Route</a></td>
+                        <th>{{$data->id}}</th>
+                        <th>{{$data->customer_id}}</th>
+                        <th>{{$data->status_id}}</th>
+                        <th>{{$data->total}}</th>
+                        <th>{{$data->delivery_adress}}</th>
+                        <th><a href="/invoice/edit/{{ $data->id }}" class="header__link">Edit</a>
+                        <a href="/invoice/delete/{{ $data->id }}" class="header__link">Delete</a></th>
+                        <th><a href="/routes" class="header__link">Route</a></th>
                     </tr>
                     @endforeach  
                 </table> 

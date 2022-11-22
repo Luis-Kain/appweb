@@ -14,7 +14,7 @@
         <div class="header__options">
           <a href="http://localhost:8000/" class="header__link">Sign out</a>
           <a href="http://localhost:8000/dashboard" class="header__link">Home</a>
-          <a href="http://localhost:8000/admin/add" class="header__link">Add new client</a>
+          <a href="http://localhost:8000/material/add" class="header__link">Add material</a>
 
         </div>
       </header>
@@ -26,7 +26,7 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">clients</h2>
+              <h2 class="main__heading">Materials</h2>
               
               <p class="main__sub"> </p>
             </div>
@@ -38,22 +38,24 @@
           </div>
 
           <div >
-                <table id ="customers">
+                <table id ="customers" >
                     <tr>
                         <th>id</th>
                         <th>Name</th>
-                        <th>RFC</th>
-                        <th>description</th>
+                        <th>Cost</th>
+                        <th>Price</th>
+                        <th>Amount</th>
                         <th>Actions</th>
                     </tr>
-                    @foreach($client as $data)
+                    @foreach($material as $data)
                       <tr>
                         <th>{{$data->id}}</th>
-                        <th>{{$data->nombre}}</th>
-                        <th>{{$data->RFC}}</th>
-                        <th>{{$data->description}}</th>
-                        <th><a href="/admin/edit/{{ $data->id }}" class="header__link">Edit</a>
-                        <a href="/admin/delete/{{ $data->id }}" class="header__link">Delete</a></th>
+                        <th>{{$data->name}}</th>
+                        <th>{{$data->cost}}</th>
+                        <th>{{$data->price}}</th>
+                        <th>{{$data->amount}}</th>
+                        <th><a href="/material/edit/{{ $data->id }}" class="header__link">Edit</a>
+                        <a href="/material/delete/{{ $data->id }}" class="header__link">Delete</a></th>
                       </tr>
                     @endforeach
                 </table> 

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
+use App\Models\Material;
 
-class RegisterCustomerController extends Controller
+class AddMaterialCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class RegisterCustomerController extends Controller
      */
     public function index()
     {
-        return view("registerCustomer");
+        return view('addMaterialCustomer');
     }
 
     /**
@@ -25,7 +25,7 @@ class RegisterCustomerController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -36,16 +36,16 @@ class RegisterCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $query = DB::table('users')->insert([
+        $query = DB::table('materials')->insert([
             'name'=>$request->input('name'),
-            'first_lastname'=>$request->input('first_lastname'),
-            'second_lastname'=>$request->input('second_lastname'),
-            'username'=>$request->input('username'),
-            'password'=>$request->input('password'),
-            'roll_id'=>$request->input('roll_id'),
+            'cost'=>$request->input('cost'),
+            'price'=>$request->input('price'),
+            'amount'=>$request->input('amount'),
         ]);
 
-        return view("loginCustomer");
+        $material = Material::all();
+        
+        return view('materialCustomer',['material'=>$material ]);
     }
 
     /**

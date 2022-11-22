@@ -11,6 +11,8 @@ use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\RoutesCustomerController;
 use App\Http\Controllers\RolesAdminController;
 use App\Http\Controllers\AddClientCustomerController;
+use App\Http\Controllers\MaterialCustomerController;
+use App\Http\Controllers\AddMaterialCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,4 +60,16 @@ Route::post('/invoice/update/{id}',[InvoiceCustomerController::class,'update']);
 
 Route::get('/sales/add',[SalesCustomerController::class,'index']);
 
-Route::get('/sales/add/succes',[SalesCustomerController::class],'store');
+Route::get('/sales/add/succes',[SalesCustomerController::class,'store']);
+
+Route::get('/material',[MaterialCustomerController::class,'index']);
+
+Route::get('/material/add',[AddMaterialCustomerController::class,'index']);
+
+Route::post('/material/add/succes',[AddMaterialCustomerController::class,'store']);
+
+Route::get('/material/edit/{id}',[MaterialCustomerController::class,'redirect']);
+
+Route::post('/material/edit/succes/{id}',[MaterialCustomerController::class,'update']);
+
+Route::get('/material/delete/{id}',[MaterialCustomerController::class,'destroy']);

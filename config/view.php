@@ -26,6 +26,9 @@ return [
         resource_path('views/editClientCustomer'),
         resource_path('views/addOrderCustomer'),
         resource_path('views/editOrderCustomer'),
+        resource_path('views/materialCustomer'),
+        resource_path('views/addMaterialCustomer'),
+        resource_path('views/editMaterialCustomer'),
 
     ],
 

@@ -106,7 +106,10 @@
               <div class="main__discover-heading-container">
                 <h2 class="main__discover-heading ss-heading">Sales</h2>
                 <a href="http://localhost:8000/sales" class="ss-show">make an order</a>
+
               </div>
+              <a href="http://localhost:8000/material" class="ss-show">show materials</a>
+
 
               <ul class="main__discover-places">
 

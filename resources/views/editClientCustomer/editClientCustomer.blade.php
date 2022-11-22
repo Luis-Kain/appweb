@@ -12,7 +12,7 @@
     <header class="header">
         <h1 class="header__heading"><a>HAWK</a></h1>
         <div class="header__options">
-          <a href="http://localhost:8000/" class="header__link">Login</a>
+          <a href="http://localhost:8000/" class="header__link">Sign out</a>
         </div>
     </header>
 

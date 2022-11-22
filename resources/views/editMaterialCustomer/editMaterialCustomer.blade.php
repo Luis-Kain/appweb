@@ -23,36 +23,48 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">Add New Client</h2>
+              <h2 class="main__heading">Edit Material</h2>
               
               <p class="main__sub"> </p>
             </div>
 
             <div class="main__list-heading-wrap">
               
-                <form action="/admin/add/succes" method="post">
+                <form action="/material/edit/succes/<?php echo $material[0]->id;?>" method="post">
                 @csrf   
                 <p>
                     <label for="name">Name:</label>
                     <input type="text" 
                         name="name"
-                        placeholder="name">
+                        placeholder="name"
+                        value = "<?php echo$material[0]->name; ?>">
                     </input>
                 </p>
                 <p>
                     
-                    <label for="RFC">RFC:</label>
+                    <label for="cost">Cost:</label>
                     <input type="text" 
-                        name="RFC"
-                        placeholder="RFC">
+                        name="cost"
+                        placeholder="cost"
+                        value = "<?php echo$material[0]->cost; ?>">
                     </input>
                 </p>
                 <p>
                     
-                    <label for="description">description</label>
+                    <label for="price">Price:</label>
                     <input type="text" 
-                        name="description"
-                        placeholder="description">
+                        name="price"
+                        placeholder="price"
+                        value = "<?php echo$material[0]->price; ?>">
+                    </input>
+                </p>
+                <p>
+                    
+                    <label for="amount">Amount:</label>
+                    <input type="text" 
+                        name="amount"
+                        placeholder="amount"
+                        value = "<?php echo$material[0]->amount; ?>">
                     </input>
                 </p>
                     <button type="Submit" class="ss-show">Submit</button>

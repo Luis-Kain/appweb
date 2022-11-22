@@ -23,14 +23,14 @@
           <div class="main__col-1">
 
             <div>
-              <h2 class="main__heading">Add New Client</h2>
+              <h2 class="main__heading">Add New Material</h2>
               
               <p class="main__sub"> </p>
             </div>
 
             <div class="main__list-heading-wrap">
               
-                <form action="/admin/add/succes" method="post">
+                <form action="/material/add/succes" method="post">
                 @csrf   
                 <p>
                     <label for="name">Name:</label>
@@ -41,18 +41,26 @@
                 </p>
                 <p>
                     
-                    <label for="RFC">RFC:</label>
+                    <label for="cost">Cost:</label>
                     <input type="text" 
-                        name="RFC"
-                        placeholder="RFC">
+                        name="cost"
+                        placeholder="cost">
                     </input>
                 </p>
                 <p>
                     
-                    <label for="description">description</label>
+                    <label for="price">Price:</label>
                     <input type="text" 
-                        name="description"
-                        placeholder="description">
+                        name="price"
+                        placeholder="price">
+                    </input>
+                </p>
+                <p>
+                    
+                    <label for="amount">Amount:</label>
+                    <input type="text" 
+                        name="amount"
+                        placeholder="amount">
                     </input>
                 </p>
                     <button type="Submit" class="ss-show">Submit</button>
