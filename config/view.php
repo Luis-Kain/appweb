@@ -29,6 +29,7 @@ return [
         resource_path('views/materialCustomer'),
         resource_path('views/addMaterialCustomer'),
         resource_path('views/editMaterialCustomer'),
+        resource_path('views/showUserCustomer'),
 
     ],
 

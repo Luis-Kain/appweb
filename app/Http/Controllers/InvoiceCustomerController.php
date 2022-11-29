@@ -47,7 +47,10 @@ class InvoiceCustomerController extends Controller
             'status_id'=>$request->input('status_id'),
             'total'=>$request->input('total'),
             'delivery_adress'=>$request->input('delivery_adress'),
+            //'invoice_row_id'=>$invoice->invoice_row->invoice_id->input('invoice_row_id'),
+
         ]);
+        
 
         $invoice = Invoice::all();
         

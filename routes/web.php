@@ -13,6 +13,7 @@ use App\Http\Controllers\RolesAdminController;
 use App\Http\Controllers\AddClientCustomerController;
 use App\Http\Controllers\MaterialCustomerController;
 use App\Http\Controllers\AddMaterialCustomerController;
+use App\Http\Controllers\ShowUserCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +74,5 @@ Route::get('/material/edit/{id}',[MaterialCustomerController::class,'redirect'])
 Route::post('/material/edit/succes/{id}',[MaterialCustomerController::class,'update']);
 
 Route::get('/material/delete/{id}',[MaterialCustomerController::class,'destroy']);
+
+Route::get('/users',[ShowUserCustomerController::class,'index']);

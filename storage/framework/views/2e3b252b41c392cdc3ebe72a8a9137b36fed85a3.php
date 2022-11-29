@@ -14,6 +14,7 @@
         <div class="header__options">
           <a href="http://localhost:8000/" class="header__link">Sign out</a>
           <a href="http://localhost:8000/admin" class="header__link">Admin</a>
+          <a href="http://localhost:8000/users" class="header__link">Users</a>
 
         </div>
       </header>
